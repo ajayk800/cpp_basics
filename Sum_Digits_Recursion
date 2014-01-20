@@ -1,0 +1,30 @@
+#include<iostream.h>
+#include<conio.h>
+
+int n=1, sum=0;
+int sumDigits(int n, int sum) // sumDigits function
+
+{
+	if(n==0) // call to stop recursion
+	{
+	return sum;
+	}
+	else
+	{
+	sum=sum+n%10;
+	n=n/10;
+	return sumDigits(n, sum);
+}
+}
+
+int main(int argc, char* argv[])
+{
+       clrscr();
+	n=1, sum=0;
+
+	cout<<"Enter a non-negative integer (enter 0 to end): \n";
+	cin>>n;
+	sum = sumDigits(n, sum);
+	cout<<"The sum of all digits in " <<n<<" is: " <<sum<<"\n";
+	getch();
+}
